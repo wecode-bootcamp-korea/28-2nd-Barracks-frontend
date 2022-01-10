@@ -1,6 +1,4 @@
-# Getting Started with Create React App
-
-# 1팀 MotherTerarosa Team Project
+# 오늘의 집
 
 ## :: 팀명
 
