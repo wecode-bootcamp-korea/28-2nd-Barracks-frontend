@@ -1,12 +1,22 @@
 const theme = {
-  background: '#FFFEFC',
-  white: '#FFFFFF',
-  grey: 'rgba(196,196,196,0.3)',
-  middleGrey: 'rgba(65,65,65,0.4)',
-  deepGrey: '#828282',
-  lightOrange: 'rgba(255,195,170,0.3)',
-  fontColor: '#2D2B2B',
-  fontContent: "'Noto Sans KR', sans-serif;",
+  colors: {
+    // gray-scales
+    black: '#000',
+    dark: '#191a20',
+    primary: '#3f4150',
+    secondary: '#8c8d96',
+    border: '#e0e2e7',
+    background: '#f7f8fa',
+    white: '#fff',
+
+    // theme-colors
+    blue: '#3da5f5',
+    darkBlue: '#3186c4',
+    lightBlue: '#92DDF6',
+
+    // other-colors
+    red: '#FF617A',
+  },
 };
 
 export default theme;
