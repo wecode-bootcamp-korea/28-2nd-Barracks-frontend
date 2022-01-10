@@ -1,70 +1,43 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 1팀 MotherTerarosa Team Project
 
-## Available Scripts
+## :: 팀명
 
-In the project directory, you can run:
+- Barracks
 
-### `npm start`
+## :: 팀원
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Frontend - 박윤국, 정해수, 한상일
+- Backend - 이아영, 정병연, 지원석 (https://github.com/wecode-bootcamp-korea/28-2nd-Barracks-backend)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## :: Project 소개
 
-### `npm test`
+### Languages and Tools
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<div aligin=center>
 
-### `npm run build`
+[![](https://img.shields.io/badge/ES6-F7DF1E?logo=javascript&logoColor=white&logoWidth=20)]()
+[![](https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=white&logoWidth=20)]()
+[![](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white&logoWidth=20)]()
+[![](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white&logoWidth=20)]()
+[![](https://img.shields.io/badge/Sass-CC6699?logo=sass&logoColor=white&logoWidth=20)]()
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+</div>
+<div aligin=center>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+[![](https://img.shields.io/badge/Git-F05032?logo=git&logoColor=white&logoWidth=20)]()
+[![](https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white&logoWidth=20)]()
+[![](https://img.shields.io/badge/Slack-4A154B?logo=slack&logoColor=white&logoWidth=20)]()
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+</div>
 
-### `npm run eject`
+### To-Be
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+|      Page      | 구현 할 사항                                                                |                                                                                                                             구현이미지                                                                                                                              |
+| :------------: | :-------------------------------------------------------------------------- | :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| Login & SignUp | <ul><li>소셜 로그인 (카카오 이용)<li>JWT 토큰 받아서 localStroage 저장</ul> | ![로그인페이지](https://images.velog.io/images/haesoohaesoo/post/025698b6-1280-4ac6-837a-8196f149e5ed/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202022-01-10%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%208.18.18.png) |
+|     SignUp     | <ul><li>소셜 회원가입 (카카오 이용)</ul>                                    |        ![](https://images.velog.io/images/lov012726/post/88e4392c-1ec5-4fd7-9828-f256cdd16699/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202021-12-27%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%205.42.51.png)         |
+|  Main (List)   | <ul><li>점보트론 <li>카드 컴포넌트 <li>필터 기능 <li>무한스크롤 </ul>       |       ![](https://images.velog.io/images/haesoohaesoo/post/95519df0-1bc5-47b2-900a-912c3c527ae4/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202022-01-10%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%208.32.56.png)       |
+|     Detail     | <ul><li>메인 슬라이더 <li>오른쪽 사이드 유저정보 및 좋아요 <li>댓글 </ul>   |       ![](https://images.velog.io/images/haesoohaesoo/post/56ddaf42-df07-47da-8dba-ca16f0cd913f/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202022-01-10%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%208.34.00.png)       |
+|    NewPost     | <ul><li>유저 사진 업로드</ul>                                               |       ![](https://images.velog.io/images/haesoohaesoo/post/7cc0f119-d2c7-41e0-9f8b-abb2a7e5b832/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202022-01-10%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%208.35.42.png)       |
