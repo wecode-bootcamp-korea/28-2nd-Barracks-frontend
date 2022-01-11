@@ -1,13 +1,18 @@
 import React from 'react';
-import theme from 'styles/theme';
 import styled from 'styled-components';
+import Logo from 'components/Logo/Logo';
 
 function Main(props) {
-  return <TestBox>여긴 메인페이지다.</TestBox>;
+  return (
+    <>
+      <Logo fontSize="30px" />
+      <TestBox>여긴 메인페이지다.</TestBox>
+    </>
+  );
 }
 
 const TestBox = styled.div`
-  color: ${theme.colors.red};
+  color: ${({ theme }) => theme.red};
 `;
 
 export default Main;
