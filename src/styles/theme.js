@@ -1,4 +1,4 @@
-const theme = {
+export const color = {
   // gray-scales
   black: '#000',
   dark: '#191a20',
@@ -17,4 +17,44 @@ const theme = {
   red: '#FF617A',
 };
 
-export default theme;
+export const mixins = {
+  // flex
+  flexBox: (direction = 'row', align = 'center', justify = 'center') => `
+    display: flex;
+    flex-direction: ${direction};
+    align-items: ${align};
+    justify-content: ${justify};
+  `,
+
+  // positions
+  positionCenterX: (type = 'absolute') => {
+    if (type === 'absolute' || type === 'fixed')
+      return `
+        position: ${type};
+        left: 50%;
+        transform: translateX(-50%);
+      `;
+    return;
+  },
+
+  positionCenterY: (type = 'absolute') => {
+    if (type === 'absolute' || type === 'fixed')
+      return `
+        position: ${type};
+        top: 50%;
+        transform: translateY(-50%);
+      `;
+    return;
+  },
+
+  positionCenter: (type = 'absolute') => {
+    if (type === 'absolute' || type === 'fixed')
+      return `
+        position: ${type};
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      `;
+    return;
+  },
+};

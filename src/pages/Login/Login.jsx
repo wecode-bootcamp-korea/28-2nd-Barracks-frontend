@@ -1,7 +1,6 @@
 import React from 'react';
 import { KAKAO_AUTH_URL } from 'socialLogin/KakaoLogin';
 import styled, { keyframes } from 'styled-components';
-import { flexBox } from 'styles/mixins';
 
 const { Kakao } = window;
 
@@ -28,7 +27,7 @@ function Login(props) {
 }
 
 const Container = styled.section`
-  ${flexBox()}
+  ${({ theme }) => theme.flexBox()}
   width: 100%;
   height: 100vh;
   background-color: ${({ theme }) => theme.background};
@@ -67,7 +66,7 @@ const Greeting = styled.p`
 `;
 
 const ContentBox = styled.div`
-  ${flexBox()}
+  ${({ theme }) => theme.flexBox()}
   width: 500px;
   height: 500px;
   background-color: ${({ theme }) => theme.white};
