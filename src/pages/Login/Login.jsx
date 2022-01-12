@@ -1,14 +1,8 @@
 import React from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
 import { KAKAO_GET_AUTH_URL } from 'socialLogin/KakaoLogin';
 import styled, { keyframes } from 'styled-components';
 
-const { Kakao } = window;
-
 function Login(props) {
-  const location = useLocation();
-  console.log(location);
-
   return (
     <Container>
       <ContentBox>
