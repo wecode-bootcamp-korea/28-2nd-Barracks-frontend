@@ -1,10 +1,14 @@
 import React from 'react';
-import { KAKAO_AUTH_URL } from 'socialLogin/KakaoLogin';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { KAKAO_GET_AUTH_URL } from 'socialLogin/KakaoLogin';
 import styled, { keyframes } from 'styled-components';
 
 const { Kakao } = window;
 
 function Login(props) {
+  const location = useLocation();
+  console.log(location);
+
   return (
     <Container>
       <ContentBox>
@@ -73,7 +77,7 @@ const ContentBox = styled.div`
   padding: 60px;
 `;
 
-const LoginButton = styled.a.attrs({ href: KAKAO_AUTH_URL })`
+const LoginButton = styled.a.attrs({ href: KAKAO_GET_AUTH_URL })`
   display: block;
   width: 100%;
   margin: 0 auto;
