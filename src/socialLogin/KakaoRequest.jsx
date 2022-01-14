@@ -2,6 +2,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { KAKAO_GET_TOKEN_URL } from './KakaoLogin';
 import qs from 'qs';
 import { useEffect } from 'react';
+import { api } from 'config';
 
 const { Kakao } = window;
 
@@ -31,7 +32,20 @@ function KakaoRequest(props) {
         body: requestToken,
       })
         .then(res => res.json())
-        .then(data => console.log(data));
+        .then(data => {
+          const { access_token } = data;
+
+          fetch(api.login, {
+            headers: {
+              Authorization: access_token,
+            },
+          })
+            .then(res => res.json())
+            .then(data => {
+              sessionStorage.setItem('access_token', data.token);
+              navigate('/');
+            });
+        });
     } catch (err) {
       alert('다시 한번 시도해보세요');
       navigate(-1);
