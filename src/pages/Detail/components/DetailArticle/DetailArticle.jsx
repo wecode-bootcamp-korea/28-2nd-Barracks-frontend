@@ -1,38 +1,38 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import DetailSlider from './DetailSlider';
 
 export default function DetailArticle() {
+  const [detailData, setDetailData] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    fetch('http://localhost:3000/data/DetailMockData.json')
+      .then(res => res.json())
+      .then(data => setDetailData(data[0]))
+      .then(setIsLoading(false));
+  }, []);
+
+  if (isLoading || !detailData) return <div>Loading</div>;
+
   return (
     <article>
-      <ArticleImage>
-        <img />
-      </ArticleImage>
-      <ArticleComments>
-        아이맥 사이로 촘촘하게 들어오는 아침해가 좋아서 얼른 아이폰 들고
-        찍었어요
-      </ArticleComments>
+      <DetailSlider imageUrlList={detailData.image_urls} />
+      <ArticleComments>{detailData.content}</ArticleComments>
       <ArticleTags>
-        <span>#오하우스</span>
-        <span>#데스크테리어</span>
-        <span>#작업실</span>
+        {detailData.tags?.map((tag, index) => (
+          <Link key={index} to="/contents">
+            <span>{tag}</span>
+          </Link>
+        ))}
       </ArticleTags>
     </article>
   );
 }
 
-const ArticleImage = styled.div`
-  width: 100%;
-  height: 500px;
-  background-color: ${({ theme }) => theme.secondary};
-  margin-top: 20px;
-
-  > img {
-    width: 100%;
-  }
-`;
-
 const ArticleComments = styled.div`
-  margin-top: 40px;
+  margin-top: 80px;
   font-weight: 300;
   font-size: 13px;
 `;
@@ -42,8 +42,10 @@ const ArticleTags = styled.div`
   font-weight: 300;
   color: ${({ theme }) => theme.blue};
 
-  > span {
+  > a {
     margin-right: 20px;
+    text-decoration: none;
+    color: inherit;
   }
 
   & :hover {
