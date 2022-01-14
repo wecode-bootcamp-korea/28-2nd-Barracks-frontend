@@ -1,43 +1,38 @@
-import React, { useState } from 'react';
-import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai';
+import React from 'react';
+import styled, { css, keyframes } from 'styled-components';
+
+import { useToggle } from 'pages/Detail/hooks/UseToggle';
 import { HiOutlineDotsVertical } from 'react-icons/hi';
-import { BsBookmark, BsFillBookmarkFill } from 'react-icons/bs';
 
 import DetailButton from '../DetailButtons/DetailButton';
 import DetailProfile from '../DetailProfile/DetailProfile';
-
-import styled, { css, keyframes } from 'styled-components';
+import HeartToggleButton from './HeartToggleButton';
+import BookMarkToggleButton from './BookMarkToggleButton';
 
 export default function DetailAside() {
-  const [isClickedIcon, setIsClickedIcon] = useState(false);
+  const [isClickedLike, setIsClickedLike] = useToggle(false);
+  const [isClickedBookMark, setIsClickedBookMark] = useToggle(false);
 
   const clickLikeButton = () => {
-    setIsClickedIcon(!isClickedIcon);
+    setIsClickedLike(isClickedLike);
+  };
+
+  const clickBookMarkButton = () => {
+    setIsClickedBookMark(!isClickedBookMark);
   };
 
   return (
     <Container>
       <AsideUser>
         <LikeWrapper>
-          <AsideDetailButton color="border" size="large">
-            {isClickedIcon ? (
-              <AiFillHeart className="fillButton" onClick={clickLikeButton} />
-            ) : (
-              <AiOutlineHeart onClick={clickLikeButton} />
-            )}
-            <span>12</span>
-          </AsideDetailButton>
-          <AsideDetailButton color="border" size="large">
-            {isClickedIcon ? (
-              <BsFillBookmarkFill
-                className="fillButton"
-                onClick={clickLikeButton}
-              />
-            ) : (
-              <BsBookmark onClick={clickLikeButton} />
-            )}
-            <span>18</span>
-          </AsideDetailButton>
+          <HeartToggleButton
+            onClick={clickLikeButton}
+            isClicked={isClickedLike}
+          />
+          <BookMarkToggleButton
+            onClick={clickBookMarkButton}
+            isClicked={isClickedBookMark}
+          />
           <DotButton>
             <HiOutlineDotsVertical />
           </DotButton>
@@ -66,21 +61,6 @@ const DotButton = styled.button`
   font-size: 20px;
   color: ${({ theme }) => theme.secondary};
   cursor: pointer;
-`;
-
-const AsideDetailButton = styled(DetailButton)`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #f5f5f5;
-  width: 120px;
-  text-align: center;
-  font-weight: 300;
-  font-size: 18px;
-
-  &:hover {
-    background: ${({ theme }) => theme.border};
-  }
 `;
 
 const fadeIn = keyframes`
@@ -112,7 +92,7 @@ const AsideUser = styled.div`
 `;
 
 const Sticky = css`
-  position: fixed !important;
+  position: fixed;
   background-color: white;
   transition: all 0.6s ease-in-out;
   color: black;

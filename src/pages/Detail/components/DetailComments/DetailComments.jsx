@@ -1,9 +1,9 @@
 import React from 'react';
+import styled from 'styled-components';
 import { AiOutlineHeart } from 'react-icons/ai';
+
 import DetailButton from '../DetailButtons/DetailButton';
 import DetailAvatar from '../DetailAvatar/DetailAvatar';
-
-import styled from 'styled-components';
 
 export default function DetailComments() {
   return (

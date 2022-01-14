@@ -1,0 +1,19 @@
+[
+  {
+    "posting_id": 1,
+    "title": "우리집 자랑하기",
+    "content": "다같이 돌자 동네 한 바퀴, 한티 한 바퀴~",
+    "tags": ["#두닷", "#윤국이네집", "#조명맛집", "#턴테이블"],
+    "size": 20,
+    "residence": "10평대",
+    "space": "빌라",
+    "style": "빈티지스타일",
+    "image_urls": [
+      "https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/164197302688549626.jpeg?gif=1&w=850",
+      "https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/164198844426833982.jpeg?gif=1&w=850",
+      "https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/164197613973365447.jpeg?gif=1&w=850"
+    ],
+    "user_name": "박윤국쓰",
+    "user_image": "https://robohash.org/istedolorumquas.png?size=50x50&set=set1"
+  }
+]
