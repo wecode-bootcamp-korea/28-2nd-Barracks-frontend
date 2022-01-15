@@ -11,7 +11,6 @@ function Logo({ fontSize }) {
 }
 
 const LogoTitle = styled.h1`
-  // TODO: 글꼴이 이상해서 relative 줬음..
   position: relative;
   top: -5px;
   font-family: '양진체';

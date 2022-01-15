@@ -42,7 +42,12 @@ function KakaoRequest(props) {
           })
             .then(res => res.json())
             .then(data => {
+              const { nickname, email, profile_image } = data.user_information;
               sessionStorage.setItem('access_token', data.token);
+              sessionStorage.setItem(
+                'userInfo',
+                JSON.stringify({ nickname, profile_image, email })
+              );
               navigate('/');
             });
         });
@@ -56,7 +61,7 @@ function KakaoRequest(props) {
     getKakaoToken();
   }, []);
 
-  return null;
+  return <></>;
 }
 
 export default KakaoRequest;

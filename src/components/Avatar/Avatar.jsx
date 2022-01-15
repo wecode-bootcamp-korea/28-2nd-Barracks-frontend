@@ -1,12 +1,14 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-function Avatar({ isActive: isDropDownOpen }) {
-  // TODO: size별 width값 출력 다르게 할 것
-  // TODO: 만약 회원 프로필이 없다면 기본 프로필로 설정되게끔 할 것!
+function Avatar({ isActive: isDropDownOpen, profileImage }) {
   return (
     <ImageWrapper isDropDownOpen={isDropDownOpen}>
-      <img src="/images/img-user-default.png" alt="user" />
+      {profileImage ? (
+        <img src={profileImage} alt="user" />
+      ) : (
+        <img src="/images/img-user-default.png" alt="user" />
+      )}
     </ImageWrapper>
   );
 }
@@ -32,6 +34,7 @@ const ImageWrapper = styled.div`
   img {
     display: block;
     width: 100%;
+    height: 100%;
     border-radius: 50%;
     object-fit: cover;
   }

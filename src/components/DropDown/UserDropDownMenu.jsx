@@ -1,18 +1,25 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 const MY_MENU_ITEMS = ['마이페이지', '로그아웃'];
 
 function UserDropDownMenu(props) {
   const { isDropDownMenuOpened } = props;
+  const navigate = useNavigate();
+
+  const logout = () => {
+    sessionStorage.removeItem('access_token');
+    sessionStorage.removeItem('userInfo');
+    navigate('/');
+  };
 
   return (
     <DropDownWrapper isDropDownMenuOpened={isDropDownMenuOpened}>
       <MenuList>
         {MY_MENU_ITEMS.map((menu, index) => (
           <MenuItem key={index}>
-            <Link to="#">{menu}</Link>
+            <button onClick={logout}>{menu}</button>
           </MenuItem>
         ))}
       </MenuList>
@@ -74,9 +81,12 @@ export const MenuItem = styled.li`
     color: ${({ theme }) => theme.primary};
     width: 100%;
     height: 44px;
+    background-color: transparent;
+    border: 0;
     padding: 10px 14px;
     border-radius: 2px;
     text-decoration: none;
+    cursor: pointer;
 
     &:hover {
       background-color: ${({ theme }) => theme.background};
