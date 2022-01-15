@@ -1,16 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
-import { AiOutlineHeart } from 'react-icons/ai';
 
-import DetailButton from '../DetailButtons/DetailButton';
+import useFetch from 'pages/Detail/hooks/useFetch';
 import DetailAvatar from '../DetailAvatar/DetailAvatar';
+import Comments from './Comments';
+
+const COUNT_LIMIT = 5;
 
 export default function DetailComments() {
+  const [offset, setOffset] = useState(0);
+  const { data: commentList, loading: isCommentLoading } = useFetch({
+    url: `http://localhost:3000/data/comment/offset=${offset}&limit=${COUNT_LIMIT}.json`,
+    query: offset,
+  });
+  const pages = commentList && commentList[0].count / COUNT_LIMIT;
+
+  const goToNextPage = event => {
+    const { value } = event.target;
+    const queryOffset = +value * 5;
+    setOffset(queryOffset);
+  };
+
   return (
     <Container>
       <CommentCount>
         <span>댓글</span>
-        <span className="count">1</span>
+        <Count>{commentList && commentList[0].count}</Count>
       </CommentCount>
       <CommentInput>
         <DetailAvatar />
@@ -21,28 +36,15 @@ export default function DetailComments() {
           </button>
         </InputWrapper>
       </CommentInput>
-      <CommentList>
-        <DetailAvatar />
-        <CommentWrapper>
-          <CommentText>
-            <p>닉네임</p>
-            <span>댓글입니다.</span>
-          </CommentText>
-          <CommentInformation>
-            <div>1시간 전</div>
-            <div>
-              <AiOutlineHeart />
-              <span>좋아요</span>
-            </div>
-            <div>답글달기</div>
-          </CommentInformation>
-        </CommentWrapper>
-      </CommentList>
-      <CommentButton>
-        <DetailButton color="blue" size="medium" padding="4px" fullWidth="25px">
-          1
-        </DetailButton>
-      </CommentButton>
+      {commentList && (
+        <Comments
+          commentList={commentList}
+          isCommentLoading={isCommentLoading}
+          offset={offset}
+          pages={pages}
+          goToNextPage={goToNextPage}
+        />
+      )}
     </Container>
   );
 }
@@ -58,27 +60,16 @@ const Container = styled.div`
 const CommentCount = styled.div`
   font-weight: 700;
   font-size: 16px;
-
-  .count {
-    margin-left: 10px;
-    color: ${({ theme }) => theme.blue};
-  }
 `;
 
-const CommentButton = styled.div`
-  display: flex;
-  margin: 0 auto;
-  margin-top: 20px;
+const Count = styled.span`
+  margin-left: 10px;
+  color: ${({ theme }) => theme.blue};
 `;
 
 const CommentInput = styled.div`
   display: flex;
   margin: 20px 0;
-`;
-
-const CommentList = styled.div`
-  display: flex;
-  margin: 10px 0;
 `;
 
 const InputWrapper = styled.div`
@@ -110,34 +101,5 @@ const InputWrapper = styled.div`
         opacity: 60%;
       }
     }
-  }
-`;
-
-const CommentWrapper = styled.div`
-  color: ${({ theme }) => theme.primary};
-`;
-
-const CommentText = styled.div`
-  display: flex;
-  font-size: 14px;
-
-  > span {
-    margin-right: 10px;
-  }
-
-  > p {
-    margin-right: 10px;
-    font-weight: 700;
-  }
-`;
-
-const CommentInformation = styled.div`
-  display: flex;
-  margin: 4px 0;
-  font-size: 12px;
-
-  > div {
-    margin: auto 0;
-    margin-right: 10px;
   }
 `;

@@ -1,12 +1,23 @@
 import React from 'react';
 import styled from 'styled-components';
 import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai';
+import { useToggle } from 'pages/Detail/hooks/useToggle';
 import DetailButton from '../DetailButtons/DetailButton';
 
-export default function HeartToggleButton({ onClick, isClicked }) {
+export default function HeartToggleButton() {
+  const [isClickedLike, setIsClickedLike] = useToggle(false);
+
+  const clickLikeButton = () => {
+    setIsClickedLike(isClickedLike);
+  };
+
   return (
-    <AsideDetailButton color="border" size="large" onClick={onClick}>
-      {isClicked ? <AiFillHeart className="fillButton" /> : <AiOutlineHeart />}
+    <AsideDetailButton color="border" size="large" onClick={clickLikeButton}>
+      {isClickedLike ? (
+        <AiFillHeart className="fillButton" />
+      ) : (
+        <AiOutlineHeart />
+      )}
       <span>12</span>
     </AsideDetailButton>
   );

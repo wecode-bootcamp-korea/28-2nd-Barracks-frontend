@@ -13,11 +13,11 @@ export default function DetailSlider({ imageUrlList }) {
 
   return (
     <StyledSlider {...settings}>
-      {imageUrlList?.map((url, index) => {
+      {imageUrlList?.map(url => {
         return (
-          <div key={index}>
+          <div key={url.image_id}>
             <ArticleImage>
-              <img alt="upload photo" src={url} />
+              <img alt="upload photo" src={url.image_url} />
             </ArticleImage>
           </div>
         );

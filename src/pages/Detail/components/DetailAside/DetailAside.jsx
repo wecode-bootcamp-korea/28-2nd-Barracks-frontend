@@ -1,38 +1,20 @@
 import React from 'react';
 import styled, { css, keyframes } from 'styled-components';
 
-import { useToggle } from 'pages/Detail/hooks/UseToggle';
 import { HiOutlineDotsVertical } from 'react-icons/hi';
 
-import DetailButton from '../DetailButtons/DetailButton';
 import DetailProfile from '../DetailProfile/DetailProfile';
 import HeartToggleButton from './HeartToggleButton';
 import BookMarkToggleButton from './BookMarkToggleButton';
+import ClipboardButton from './ClipboardButton';
 
 export default function DetailAside() {
-  const [isClickedLike, setIsClickedLike] = useToggle(false);
-  const [isClickedBookMark, setIsClickedBookMark] = useToggle(false);
-
-  const clickLikeButton = () => {
-    setIsClickedLike(isClickedLike);
-  };
-
-  const clickBookMarkButton = () => {
-    setIsClickedBookMark(!isClickedBookMark);
-  };
-
   return (
     <Container>
       <AsideUser>
         <LikeWrapper>
-          <HeartToggleButton
-            onClick={clickLikeButton}
-            isClicked={isClickedLike}
-          />
-          <BookMarkToggleButton
-            onClick={clickBookMarkButton}
-            isClicked={isClickedBookMark}
-          />
+          <HeartToggleButton />
+          <BookMarkToggleButton />
           <DotButton>
             <HiOutlineDotsVertical />
           </DotButton>
@@ -40,18 +22,16 @@ export default function DetailAside() {
         <DetailProfile />
       </AsideUser>
       <ButtonContainer>
-        <DetailButton color="blue" size="large" padding="10px" fullWidth="100%">
-          공유하기
-        </DetailButton>
+        <ClipboardButton />
       </ButtonContainer>
     </Container>
   );
 }
 
 const ButtonContainer = styled.div`
-  position: absolute;
+  position: fixed;
+  width: 300px;
   bottom: 10px;
-  width: 100%;
 `;
 
 const DotButton = styled.button`
@@ -99,7 +79,6 @@ const Sticky = css`
 `;
 
 const Container = styled.div`
-  position: fixed;
   display: flex;
   flex-direction: column;
   width: 300px;
