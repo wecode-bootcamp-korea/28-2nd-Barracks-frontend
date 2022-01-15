@@ -1,32 +1,35 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+
+import useFetch from 'pages/Detail/hooks/useFetch';
 import DetailSlider from './DetailSlider';
+import DetailInformation from './DetailInformation';
+
+const BASE_URL = {
+  url: 'http://localhost:3000/data/DetailMockData.json',
+};
 
 export default function DetailArticle() {
-  const [detailData, setDetailData] = useState({});
-  const [isLoading, setIsLoading] = useState(true);
+  const { data: data, loading: isLoading } = useFetch({
+    url: `${BASE_URL.url}`,
+  });
+  const dataList = data && data[0].result;
 
-  useEffect(() => {
-    fetch('http://localhost:3000/data/DetailMockData.json')
-      .then(res => res.json())
-      .then(data => setDetailData(data[0]))
-      .then(setIsLoading(false));
-  }, []);
-
-  if (isLoading || !detailData) return <div>Loading</div>;
+  if (isLoading) return <div>Loading...</div>;
 
   return (
     <article>
-      <DetailSlider imageUrlList={detailData.image_urls} />
-      <ArticleComments>{detailData.content}</ArticleComments>
+      <DetailSlider imageUrlList={dataList.image_urls} />
+      <ArticleComments>{dataList.content}</ArticleComments>
       <ArticleTags>
-        {detailData.tags?.map((tag, index) => (
+        {dataList.tags.map((tag, index) => (
           <Link key={index} to="/contents">
             <span>{tag}</span>
           </Link>
         ))}
       </ArticleTags>
+      <DetailInformation hits={dataList.hits} />
     </article>
   );
 }

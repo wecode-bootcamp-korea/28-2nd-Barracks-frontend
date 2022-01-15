@@ -1,16 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 
-export default function DetailInformation() {
+export default function DetailInformation({ hits }) {
   return (
     <InformationList>
       <Information>
         <dt>조회</dt>
-        <dd>567</dd>
-      </Information>
-      <Information>
-        <dt>댓글</dt>
-        <dd>1</dd>
+        <dd>{hits}</dd>
       </Information>
       <Information>
         <dt>공유</dt>

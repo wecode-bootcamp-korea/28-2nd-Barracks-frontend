@@ -1,19 +1,27 @@
 [
   {
-    "posting_id": 1,
-    "title": "우리집 자랑하기",
-    "content": "다같이 돌자 동네 한 바퀴, 한티 한 바퀴~",
-    "tags": ["#두닷", "#윤국이네집", "#조명맛집", "#턴테이블"],
-    "size": 20,
-    "residence": "10평대",
-    "space": "빌라",
-    "style": "빈티지스타일",
-    "image_urls": [
-      "https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/164197302688549626.jpeg?gif=1&w=850",
-      "https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/164198844426833982.jpeg?gif=1&w=850",
-      "https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/164197613973365447.jpeg?gif=1&w=850"
-    ],
-    "user_name": "박윤국쓰",
-    "user_image": "https://robohash.org/istedolorumquas.png?size=50x50&set=set1"
+    "result": {
+      "content": "따스한 침실을 구경해보셔요!",
+      "hits": 2,
+      "image_urls": [
+        {
+          "image_id": 21,
+          "image_url": "https://cdn.pixabay.com/photo/2017/01/07/17/48/interior-1961070_1280.jpg"
+        },
+        {
+          "image_id": 22,
+          "image_url": "https://cdn.pixabay.com/photo/2015/04/20/06/46/office-730681_1280.jpg"
+        }
+      ],
+      "posting_id": 7,
+      "residence": "오피스텔",
+      "size": "30평대",
+      "space": "침실",
+      "style": "모던",
+      "tags": ["#침실", "#최고"],
+      "title": "따스한 온기가 느껴지는 침실",
+      "user_image": "oooo",
+      "user_name": "ppp"
+    }
   }
 ]

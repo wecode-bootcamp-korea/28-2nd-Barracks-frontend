@@ -13,7 +13,6 @@ function Detail() {
       <Contents>
         <DetailHeader />
         <DetailArticle />
-        <DetailInformation />
         <DetailComments />
       </Contents>
       <Aside>

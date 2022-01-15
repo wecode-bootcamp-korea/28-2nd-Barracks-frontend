@@ -1,12 +1,23 @@
 import React from 'react';
 import styled from 'styled-components';
 import { BsBookmark, BsFillBookmarkFill } from 'react-icons/bs';
+import { useToggle } from 'pages/Detail/hooks/useToggle';
 import DetailButton from '../DetailButtons/DetailButton';
 
-export default function BookmarkToggleButton({ onClick, isClicked }) {
+export default function BookmarkToggleButton() {
+  const [isClickedBookMark, setIsClickedBookMark] = useToggle(false);
+
+  const clickBookMarkButton = () => {
+    setIsClickedBookMark(!isClickedBookMark);
+  };
+
   return (
-    <AsideDetailButton color="border" size="large" onClick={onClick}>
-      {isClicked ? (
+    <AsideDetailButton
+      color="border"
+      size="large"
+      onClick={clickBookMarkButton}
+    >
+      {isClickedBookMark ? (
         <BsFillBookmarkFill className="fillButton" />
       ) : (
         <BsBookmark />
