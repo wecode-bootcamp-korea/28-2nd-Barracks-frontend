@@ -6,7 +6,8 @@ import UserDropDownMenu from 'components/DropDown/UserDropDownMenu';
 import { BsBookmark, BsBell } from 'react-icons/bs';
 import { IconGroup } from '../GNB';
 
-function GeneralUser(props) {
+function GeneralUser({ userInfo }) {
+  const { profile_image: profileImage } = userInfo;
   const ref = useRef();
   const [isDropDownMenuOpened, setIsDropDownMenuOpened] = useState(false);
 
@@ -25,7 +26,7 @@ function GeneralUser(props) {
         <BsBell href="#">회원가입</BsBell>
       </ButtonIcon>
       <AvatarWrapper as="button" onClick={toggleDropDownMenu} ref={ref}>
-        <Avatar isActive={isDropDownMenuOpened} />
+        <Avatar isActive={isDropDownMenuOpened} profileImage={profileImage} />
         {isDropDownMenuOpened && <UserDropDownMenu isDropDownMenuOpened />}
       </AvatarWrapper>
     </IconGroup>

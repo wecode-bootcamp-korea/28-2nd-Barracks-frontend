@@ -7,7 +7,6 @@ function UnauthorizedUser(props) {
     <IconGroup>
       <ButtonItem href="/users/login">로그인</ButtonItem>
       <ButtonItem href="/users/login">회원가입</ButtonItem>
-      <ButtonItem href="#">윤국이얼굴</ButtonItem>
     </IconGroup>
   );
 }

@@ -1,4 +1,4 @@
-import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import Button from 'components/Button/Button';
 import GeneralUser from './ButtonGroup/GeneralUser';
@@ -6,18 +6,27 @@ import UnauthorizedUser from './ButtonGroup/UnauthorizedUser';
 import { ArrowDown } from 'components/Button/Button';
 
 function NavButtonGroup(props) {
-  const currentUserLevel = 'generalUser'; // TODO: generalUser , admin , unauthorized 나중에 props에서 받아올것
+  const navigate = useNavigate();
+  const userInfo = JSON.parse(sessionStorage.getItem('userInfo'));
+  const currentUserLevel = userInfo ? 'generalUser' : 'unauthorized';
+  const buttonGroup = {
+    generalUser: <GeneralUser userInfo={userInfo} />,
+    admin: <Admin />,
+    unauthorized: <UnauthorizedUser />,
+  };
+  const goToNewPost = () => {
+    if (!userInfo) {
+      alert('글쓰기를 위해 로그인 페이지로 이동합니다.');
+      navigate('/users/login');
+      return;
+    }
+    navigate('/contents/new');
+  };
 
   return (
     <ButtonWrapper>
-      {
-        {
-          generalUser: <GeneralUser />,
-          admin: <Admin />,
-          unauthorized: <UnauthorizedUser />,
-        }[currentUserLevel]
-      }
-      <Button styleType="primary">
+      {buttonGroup[currentUserLevel]}
+      <Button styleType="primary" onClick={goToNewPost}>
         글쓰기
         <ArrowDown />
       </Button>

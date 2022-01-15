@@ -7,8 +7,16 @@ function Button({ children, styleType = 'primary', btnSize = 'md', ...props }) {
     <>
       {
         {
-          primary: <PrimaryButton size={btnSize}>{children}</PrimaryButton>,
-          outline: <OutlineButton size={btnSize}>{children}</OutlineButton>,
+          primary: (
+            <PrimaryButton size={btnSize} {...props}>
+              {children}
+            </PrimaryButton>
+          ),
+          outline: (
+            <OutlineButton size={btnSize} {...props}>
+              {children}
+            </OutlineButton>
+          ),
         }[styleType]
       }
     </>
@@ -21,6 +29,7 @@ const BaseButton = styled.button`
   font-weight: 700;
   border-radius: 4px;
   border: none;
+  cursor: pointer;
 
   ${props =>
     props.size === 'sm' && 'min-width:80px; font-size:14px; height:32px'};
@@ -28,6 +37,8 @@ const BaseButton = styled.button`
     props.size === 'md' && 'min-width:100px; font-size:16px; height:40px'};
   ${props =>
     props.size === 'lg' && 'min-width:200px; font-size:18px; height:55px'};
+  ${props =>
+    props.size === 'fullSize' && 'width:100%; font-size:18px; height:55px'};
 
   &:disabled {
     cursor: not-allowed;
@@ -52,7 +63,8 @@ const OutlineButton = styled(BaseButton)`
   transition: background-color 300ms ease-in-out;
 
   &:not(:disabled):hover {
-    background-color: ${({ theme }) => theme.lightBlue};
+    color: ${({ theme }) => theme.white};
+    background-color: ${({ theme }) => theme.blue};
   }
 `;
 export default Button;
