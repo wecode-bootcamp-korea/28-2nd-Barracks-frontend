@@ -1,0 +1,284 @@
+{
+  "results": [
+    {
+      "id": 1,
+      "top_detail": "테스트1",
+      "viewCount": 400,
+      "bottom_detail": "normal1",
+      "username": "product1",
+      "residence": "오피스텔",
+      "space": "침실",
+      "size": "10평대",
+      "style": "모던",
+      "img": [
+        "https://images.unsplash.com/photo-1560769629-975ec94e6a86?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80"
+      ]
+    },
+    {
+      "id": 2,
+      "top_detail": "테스트2",
+      "viewCount": 400,
+      "bottom_detail": "normal2",
+      "username": "product2",
+      "residence": "오피스텔",
+      "space": "침실",
+      "size": "10평대",
+      "style": "모던",
+      "img": [
+        "https://images.unsplash.com/photo-1543508282-6319a3e2621f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=830&q=80"
+      ]
+    },
+    {
+      "id": 3,
+      "top_detail": "테스트3",
+      "viewCount": 400,
+      "bottom_detail": "normal3",
+      "username": "product3",
+      "residence": "오피스텔",
+      "space": "침실",
+      "size": "10평대",
+      "style": "모던",
+      "img": [
+        "https://images.unsplash.com/photo-1556906781-9a412961c28c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
+      ]
+    },
+    {
+      "id": 4,
+      "top_detail": "테스트4",
+      "viewCount": 400,
+      "bottom_detail": "normal4",
+      "username": "product4",
+      "residence": "아파트",
+      "space": "거실",
+      "size": "20평대",
+      "style": "내추럴",
+      "img": [
+        "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
+      ]
+    },
+    {
+      "id": 5,
+      "top_detail": "테스트5",
+      "viewCount": 400,
+      "bottom_detail": "normal5",
+      "username": "product5",
+      "residence": "아파트",
+      "space": "거실",
+      "size": "20평대",
+      "style": "내추럴",
+      "img": [
+        "https://images.unsplash.com/photo-1521093470119-a3acdc43374a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
+      ]
+    },
+    {
+      "id": 6,
+      "top_detail": "테스트6",
+      "viewCount": 400,
+      "bottom_detail": "normal6",
+      "username": "product6",
+      "residence": "아파트",
+      "space": "거실",
+      "size": "20평대",
+      "style": "내추럴",
+      "img": [
+        "https://images.unsplash.com/photo-1628253747716-0c4f5c90fdda?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
+      ]
+    },
+    {
+      "id": 7,
+      "top_detail": "테스트7",
+      "viewCount": 400,
+      "bottom_detail": "normal7",
+      "username": "product7",
+      "residence": "빌라",
+      "space": "욕실",
+      "size": "30평대",
+      "style": "빈티지",
+      "img": [
+        "https://images.unsplash.com/photo-1597045566677-8cf032ed6634?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
+      ]
+    },
+    {
+      "id": 8,
+      "top_detail": "테스트8",
+      "viewCount": 400,
+      "bottom_detail": "normal8",
+      "username": "product8",
+      "residence": "빌라",
+      "space": "욕실",
+      "size": "30평대",
+      "style": "빈티지",
+      "img": [
+        "https://images.unsplash.com/photo-1526765992122-6abcb1e0f4fa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
+      ]
+    },
+    {
+      "id": 9,
+      "top_detail": "vegetable9",
+      "viewCount": 400,
+      "bottom_detail": "normal9",
+      "username": "product9",
+      "residence": "빌라",
+      "space": "욕실",
+      "size": "30평대",
+      "style": "빈티지",
+      "img": [
+        "https://images.unsplash.com/photo-1512374382149-233c42b6a83b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+      ]
+    },
+    {
+      "id": 10,
+      "top_detail": "vegetable10",
+      "viewCount": 400,
+      "bottom_detail": "normal10",
+      "username": "product10",
+      "residence": "오피스텔",
+      "space": "침실",
+      "size": "20평대",
+      "style": "빈티지",
+      "img": [
+        "https://images.unsplash.com/photo-1600269452121-4f2416e55c28?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=930&q=80"
+      ]
+    },
+    {
+      "id": 11,
+      "top_detail": "테스트11",
+      "viewCount": 400,
+      "bottom_detail": "normal11",
+      "username": "product11",
+      "residence": "오피스텔",
+      "space": "침실",
+      "size": "20평대",
+      "style": "빈티지",
+      "img": [
+        "https://images.unsplash.com/photo-1560769629-975ec94e6a86?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80"
+      ]
+    },
+    {
+      "id": 12,
+      "top_detail": "테스트12",
+      "viewCount": 400,
+      "bottom_detail": "normal12",
+      "username": "product12",
+      "residence": "오피스텔",
+      "space": "침실",
+      "size": "20평대",
+      "style": "빈티지",
+      "img": [
+        "https://images.unsplash.com/photo-1543508282-6319a3e2621f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=830&q=80"
+      ]
+    },
+    {
+      "id": 13,
+      "top_detail": "테스트13",
+      "viewCount": 400,
+      "bottom_detail": "normal13",
+      "username": "product13",
+      "residence": "아파트",
+      "space": "거실",
+      "size": "30평대",
+      "style": "내추럴",
+      "img": [
+        "https://images.unsplash.com/photo-1556906781-9a412961c28c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
+      ]
+    },
+    {
+      "id": 14,
+      "top_detail": "테스트14",
+      "viewCount": 400,
+      "bottom_detail": "normal14",
+      "username": "product14",
+      "residence": "아파트",
+      "space": "거실",
+      "size": "30평대",
+      "style": "내추럴",
+      "img": [
+        "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
+      ]
+    },
+    {
+      "id": 15,
+      "top_detail": "테스트15",
+      "viewCount": 400,
+      "bottom_detail": "normal15",
+      "username": "product15",
+      "residence": "아파트",
+      "space": "거실",
+      "size": "30평대",
+      "style": "내추럴",
+      "img": [
+        "https://images.unsplash.com/photo-1521093470119-a3acdc43374a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
+      ]
+    },
+    {
+      "id": 16,
+      "top_detail": "테스트16",
+      "viewCount": 400,
+      "bottom_detail": "normal16",
+      "username": "product16",
+      "residence": "빌라",
+      "space": "욕실",
+      "size": "30평대",
+      "style": "내추럴",
+      "img": [
+        "https://images.unsplash.com/photo-1628253747716-0c4f5c90fdda?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
+      ]
+    },
+    {
+      "id": 17,
+      "top_detail": "테스트17",
+      "viewCount": 400,
+      "bottom_detail": "normal17",
+      "username": "product17",
+      "residence": "빌라",
+      "space": "욕실",
+      "size": "20평대",
+      "style": "내추럴",
+      "img": [
+        "https://images.unsplash.com/photo-1597045566677-8cf032ed6634?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
+      ]
+    },
+    {
+      "id": 18,
+      "top_detail": "테스트18",
+      "viewCount": 400,
+      "bottom_detail": "normal18",
+      "username": "product18",
+      "residence": "빌라",
+      "space": "욕실",
+      "size": "20평대",
+      "style": "내추럴",
+      "img": [
+        "https://images.unsplash.com/photo-1526765992122-6abcb1e0f4fa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
+      ]
+    },
+    {
+      "id": 19,
+      "top_detail": "vegetable19",
+      "viewCount": 400,
+      "bottom_detail": "normal19",
+      "username": "product19",
+      "residence": "오피스텔",
+      "space": "거실",
+      "size": "20평대",
+      "style": "내추럴",
+      "img": [
+        "https://images.unsplash.com/photo-1512374382149-233c42b6a83b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+      ]
+    },
+    {
+      "id": 20,
+      "top_detail": "vegetable20",
+      "viewCount": 400,
+      "bottom_detail": "normal20",
+      "username": "product20",
+      "residence": "오피스텔",
+      "space": "거실",
+      "size": "10평대",
+      "style": "모던",
+      "img": [
+        "https://images.unsplash.com/photo-1600269452121-4f2416e55c28?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=930&q=80"
+      ]
+    }
+  ]
+}
