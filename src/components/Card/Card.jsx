@@ -4,17 +4,27 @@ import styled from 'styled-components';
 import { AiOutlineHeart } from 'react-icons/ai';
 import { BsBookmark, BsChat } from 'react-icons/bs';
 
+// function Card({
+//   id,
+//   username,
+//   profile_img,
+//   top_detail,
+//   bottom_detail,
+//   img,
+//   residence,
+//   size,
+//   space,
+//   viewCount,
+//   style,
+// })
 function Card({
-  id,
-  username,
-  top_detail,
-  bottom_detail,
-  img,
-  residence,
-  size,
-  space,
-  viewCount,
-  style,
+  posting_id,
+  like_count,
+  user_name,
+  user_image,
+  image_url,
+  content,
+  comment_count,
 }) {
   const navigate = useNavigate();
 
@@ -26,20 +36,36 @@ function Card({
     <Container>
       <Article>
         <Head>
-          <Title>{username}</Title>
-          <ProfileDesc>{top_detail}</ProfileDesc>
+          {/* <Title>{username}</Title> 기존 mock data */}
+          <Title>{user_name}</Title>
+          <div>
+            <img src={user_image} />
+          </div>
+          {/* <ProfileDesc>{top_detail}</ProfileDesc> mock data */}
         </Head>
 
-        <ImgBox>
-          <Img alt="product_image" src={img[0]} onClick={() => goToDetail()} />
-          {/* <ViewCount>{viewCount}</ViewCount> 필터 완료시 레이아웃 수정용 */}
-        </ImgBox>
-        {/* <IconList>
-          <AiOutlineHeart />
-          <BsBookmark />
-          <BsChat />
-        </IconList> 필터 완료시 레이아웃 수정용 */}
+        {/* <Img alt="product_image" src={img[0]} onClick={() => goToDetail()} /> */}
+        <div>
+          <Img
+            alt="목데이터에서 기존에 사진 받던부분 대체"
+            src={image_url}
+            onClick={() => goToDetail()}
+          />
+        </div>
       </Article>
+
+      <IconList>
+        <AiOutlineHeart>
+          <LikeCount>{like_count}</LikeCount>
+        </AiOutlineHeart>
+        <BsBookmark />
+        <BsChat>
+          <Content>{content}</Content>
+        </BsChat>
+      </IconList>
+
+      <CommentCount>{comment_count}</CommentCount>
+      <Content>{content}</Content>
     </Container>
   );
 }
@@ -48,8 +74,7 @@ const Container = styled.div`
   display: flex;
   max-width: 1140px;
   margin: 0 auto;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
   flex-flow: column wrap;
 `;
 
@@ -78,33 +103,36 @@ const ProfileDesc = styled.p`
   line-height: 28px;
 `;
 
-const ImgBox = styled.div`
-  display: grid;
-  z-index: 1;
+const ProfilePhoto = styled.img`
+  border-radius: 100%;
+  width: 30px;
+  height: 30px;
 `;
 
 const Img = styled.img`
+  display: grid;
   width: 230px;
-  height: 250px;
+  height: 280px;
+  object-fit: cover;
   border-radius: 15px;
   align-self: center;
-  z-index: 1;
 `;
 
-const ViewCount = styled.p`
+const IconList = styled.aside`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: -25px;
+  font-size: 25px;
+`;
+
+const LikeCount = styled.span`
   font-size: 14px;
-  color: red;
-  align-self: center;
 `;
 
-const IconList = styled.div`
-  display: flex;
-  flex-direction: row;
-  font-size: 94px;
-
-  > div {
-    margin: auto;
-  }
+const CommentCount = styled.p`
+  font-size: 14px;
 `;
+
+const Content = styled.p``;
 
 export default Card;

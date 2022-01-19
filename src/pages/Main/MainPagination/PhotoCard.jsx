@@ -2,10 +2,8 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import Card from 'components/Card/Card';
 
-import { AiOutlineHeart } from 'react-icons/ai';
-import { BsBookmark, BsChat } from 'react-icons/bs';
-
-const API = '/data/Mains/Mains.json';
+// const API = '/data/Mains/Mains.json';
+const API = `http://10.58.6.142:8000/postings`;
 const LIMIT = 8;
 
 function PhotoCard() {
@@ -63,6 +61,7 @@ function PhotoCard() {
               const { id, ...photoInfo } = photo;
               return <Card key={id} {...photoInfo} />;
             })}
+            {/* {user_name} */}
           </Cards>
         </ArticleGrid>
       </Articles>
@@ -93,15 +92,21 @@ const ArticleGrid = styled.div`
   grid-template-columns: repeat(4, 1fr);
   justify-content: center;
 
-  img {
+  /* img {
     width: 100%;
+    height: 100%;
+  } */
+
+  img:hover {
+    overflow: hidden;
+    transform: scale(1.02);
   }
 `;
 
 const Cards = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-gap: 45px;
+  grid-gap: 40px;
 `;
 
 export default PhotoCard;

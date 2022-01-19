@@ -75,6 +75,7 @@ export const mixins = {
 
 export const zIndex = {
   gnbLevel: 500,
+  dropdownLevel: 30,
 };
 
 const deviceSizes = {
