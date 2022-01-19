@@ -9,13 +9,12 @@ const useFetch = opts => {
   useEffect(() => {
     fetch(opts.url)
       .then(res => res.json())
-      .then(data =>
+      .then(data => {
         setState({
-          ...state,
-          data: data,
+          data: data.result,
           loading: false,
-        })
-      );
+        });
+      });
   }, [opts.query]);
 
   return { ...state };

@@ -3,10 +3,14 @@ import DetailAvatar from '../DetailAvatar/DetailAvatar';
 import DetailButton from '../DetailButtons/DetailButton';
 import styled from 'styled-components';
 
+const loginUser = {
+  image_url: '/images/img-user-default.png',
+};
+
 export default function DetailProfile() {
   return (
     <Container>
-      <DetailAvatar />
+      <DetailAvatar imageUrl={loginUser.image_url} />
       <Description>
         <p>hackeny</p>
         <span className="description">하드코딩중</span>

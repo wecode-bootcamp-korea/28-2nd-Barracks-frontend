@@ -8,10 +8,10 @@ export default function ClipboardButton() {
   const { pathname } = useLocation();
 
   const duplicateUrl = () => {
-    const url = `${BASE_URL + pathname}`;
+    const url = BASE_URL + pathname;
 
     navigator.clipboard
-      .writeText(`${url}`)
+      .writeText(url)
       .then(() => {
         alert(`${url}을 클립보드에 복사했습니다.`);
       })

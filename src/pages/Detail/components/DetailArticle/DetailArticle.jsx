@@ -1,20 +1,17 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import styled from 'styled-components';
 
 import useFetch from 'pages/Detail/hooks/useFetch';
 import DetailSlider from './DetailSlider';
 import DetailInformation from './DetailInformation';
 
-const BASE_URL = {
-  url: 'http://localhost:3000/data/DetailMockData.json',
-};
-
 export default function DetailArticle() {
-  const { data: data, loading: isLoading } = useFetch({
-    url: `${BASE_URL.url}`,
-  });
-  const dataList = data && data[0].result;
+  const BASE_URL = `http://10.58.4.34:8000/postings/${id}`;
+  const { id } = useParams();
+  const { data: data, loading: isLoading } = useFetch({ url: BASE_URL });
+
+  const dataList = data && data;
 
   if (isLoading) return <div>Loading...</div>;
 
@@ -23,8 +20,8 @@ export default function DetailArticle() {
       <DetailSlider imageUrlList={dataList.image_urls} />
       <ArticleComments>{dataList.content}</ArticleComments>
       <ArticleTags>
-        {dataList.tags.map((tag, index) => (
-          <Link key={index} to="/contents">
+        {dataList.tags?.map((tag, index) => (
+          <Link key={index} to="/postings">
             <span>{tag}</span>
           </Link>
         ))}
