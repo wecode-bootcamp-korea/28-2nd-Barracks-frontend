@@ -6,7 +6,7 @@ function Avatar({ isActive: isDropDownOpen }) {
   // TODO: 만약 회원 프로필이 없다면 기본 프로필로 설정되게끔 할 것!
   return (
     <ImageWrapper isDropDownOpen={isDropDownOpen}>
-      <img src="./images/img-user-03.jpg" alt="user" />
+      <img src="/images/img-user-default.png" alt="user" />
     </ImageWrapper>
   );
 }

@@ -1,19 +1,27 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { useLocation, useParams } from 'react-router';
 
 import useFetch from 'pages/Detail/hooks/useFetch';
-import DetailAvatar from '../DetailAvatar/DetailAvatar';
 import Comments from './Comments';
+import CommentInputWrapper from './CommentInputWrapper';
 
 const COUNT_LIMIT = 5;
 
 export default function DetailComments() {
   const [offset, setOffset] = useState(0);
+  const [newComment, setNewComment] = useState('');
+  const { pathname } = useLocation();
+
+  const BASE_URL = `http://10.58.4.34:8000${pathname}`;
+
   const { data: commentList, loading: isCommentLoading } = useFetch({
-    url: `http://localhost:3000/data/comment/offset=${offset}&limit=${COUNT_LIMIT}.json`,
+    url: `${BASE_URL}?offset=${offset}&limit=${COUNT_LIMIT}`,
     query: offset,
   });
-  const pages = commentList && commentList[0].count / COUNT_LIMIT;
+
+  const count = commentList && commentList.comments_totals;
+  const pages = Math.ceil(count / COUNT_LIMIT);
 
   const goToNextPage = event => {
     const { value } = event.target;
@@ -21,24 +29,49 @@ export default function DetailComments() {
     setOffset(queryOffset);
   };
 
+  const handleInputComment = event => {
+    const { value } = event.target;
+    setNewComment(value);
+  };
+
+  const addNewComment = event => {
+    event.preventDefault();
+    setOffset(0);
+    setNewComment('');
+
+    const submitForm = {
+      method: 'POST',
+      // headers: {
+      //   // 'Content-Type': 'application/json',
+      //   // Authorization: sessionStorage.getItem('access_token');
+      // },
+      body: JSON.stringify({
+        content: newComment,
+        user_id: 1,
+      }),
+    };
+
+    fetch(BASE_URL, submitForm)
+      .then(res => res.json())
+      .then(data => {
+        console.log(data);
+      });
+  };
+
   return (
     <Container>
       <CommentCount>
         <span>댓글</span>
-        <Count>{commentList && commentList[0].count}</Count>
+        <Count>{commentList && commentList.comments_totals}</Count>
       </CommentCount>
-      <CommentInput>
-        <DetailAvatar />
-        <InputWrapper>
-          <input placeholder="칭찬과 격려의 댓글은 작성자에게 큰 힘이 됩니다 :)" />
-          <button type="button" disabled>
-            등록
-          </button>
-        </InputWrapper>
-      </CommentInput>
+      <CommentInputWrapper
+        handleInputComment={handleInputComment}
+        addNewComment={addNewComment}
+        newComment={newComment}
+      />
       {commentList && (
         <Comments
-          commentList={commentList}
+          comments={commentList.comments}
           isCommentLoading={isCommentLoading}
           offset={offset}
           pages={pages}
@@ -65,41 +98,4 @@ const CommentCount = styled.div`
 const Count = styled.span`
   margin-left: 10px;
   color: ${({ theme }) => theme.blue};
-`;
-
-const CommentInput = styled.div`
-  display: flex;
-  margin: 20px 0;
-`;
-
-const InputWrapper = styled.div`
-    position: relative;
-    width: 670px;
-    height: 35px;
-
-    input {
-      width: 100%;
-      height: 100%;
-      border: 1px solid ${({ theme }) => theme.border};
-      border-radius: 4px;
-
-      &:focus {
-        outline: 0;
-      }
-    }
-
-    button {
-      all: unset;
-      position: absolute;
-      right: 10px;
-      height: 100%;
-      color: ${({ theme }) => theme.blue};
-      font-weight: 700;
-      font-size: 13px;
-
-      &:disabled {
-        opacity: 60%;
-      }
-    }
-  }
 `;

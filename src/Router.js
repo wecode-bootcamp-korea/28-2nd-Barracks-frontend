@@ -17,7 +17,8 @@ function Router() {
           <Route path="/users/login" element={<Login />} />
           <Route path="/oauth" element={<KakaoRequest />} />
           <Route path="/" element={<Main />} />
-          <Route path="/contents/:id" element={<Detail />} />
+          {/* <Route path="/postings/:id" element={<Detail />} /> */}
+          <Route path="/postings/:id/comments" element={<Detail />} />
           <Route path="/contents/new" element={<NewPost />} />
         </Routes>
       </Layout>

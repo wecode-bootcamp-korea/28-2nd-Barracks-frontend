@@ -4,14 +4,14 @@ import { AiOutlineHeart } from 'react-icons/ai';
 
 import DetailAvatar from '../DetailAvatar/DetailAvatar';
 
-export default function CommentWrapper({ userImage, nickName, text }) {
+export default function CommentWrapper({ userImage, nickName, content }) {
   return (
     <Container>
       <DetailAvatar imageUrl={userImage} />
       <CommentContents>
         <CommentText>
           <p>{nickName}</p>
-          <span>{text}</span>
+          <span>{content}</span>
         </CommentText>
         <CommentInformation>
           <div>1시간 전</div>

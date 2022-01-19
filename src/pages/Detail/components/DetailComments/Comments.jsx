@@ -5,7 +5,7 @@ import CommentWrapper from './CommentWrapper';
 import Pagination from './Pagination';
 
 export default function Comments({
-  commentList,
+  comments,
   isCommentLoading,
   pages,
   goToNextPage,
@@ -14,12 +14,12 @@ export default function Comments({
 
   return (
     <Container>
-      {commentList.map(data => (
+      {comments.map(comment => (
         <CommentWrapper
-          key={data.comment_id}
-          userImage={data.user_image}
-          nickName={data.nickname}
-          text={data.text}
+          key={comment.id}
+          userImage={comment.user_image}
+          nickName={comment.nickname}
+          content={comment.content}
         />
       ))}
       <ButtonWrapper>
