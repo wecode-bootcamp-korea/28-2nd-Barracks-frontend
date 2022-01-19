@@ -2,14 +2,12 @@ import React from 'react';
 import theme from 'styles/theme';
 import styled from 'styled-components';
 
-function TodayStoryCard({ usernames, top_details, bottom_details, img }) {
+function TodayStoryCard({ usernames, top_details, bottom_details, imgs }) {
   return (
     <Container>
       <TodayStory>
         <Username>{usernames}</Username>
-        <div>
-          <Img src={img} />
-        </div>
+        <Img src={imgs} />
         <Title>{top_details}</Title>
         <StoryContent>{bottom_details}</StoryContent>
       </TodayStory>
@@ -42,13 +40,14 @@ const TodayStory = styled.div`
   border: 1px solid gray;
   width: 250px;
   height: 210px;
+  border: none;
 `;
 
 const Img = styled.img`
   width: 210px;
   height: 150px;
   border-radius: 13px;
-  margin: 20px;
+  margin: 10px;
   align-self: center;
 `;
 

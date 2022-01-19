@@ -7,7 +7,6 @@ const settings = {
   infinite: true, //컨텐츠 끝에 도달시 다음컨텐츠를 반복하여 가져옴
   slidesToShow: 1, // 한 화면에 보이는 컨텐츠
   slidesToScroll: 1, // 한번에 넘어가는 컨텐츠 수
-  speed: 700,
   autoplay: true,
   autoplaySpeed: 700,
   prevArrow: "<button type='button' class='slick-prev'>Previous</button>", // 이전 화살표 모양 설정
@@ -49,8 +48,8 @@ const Container = styled.div`
 
 const MainSlider = styled(Slider)`
   display: flex;
-  width: 1000px;
-  margin: 90px auto;
+  width: 950px;
+  margin: 15px auto;
 
   button {
     z-index: 1;
@@ -72,6 +71,11 @@ const MainSlider = styled(Slider)`
   img {
     height: 400px;
     border-radius: 10px;
+  }
+
+  img:hover {
+    overflow: hidden;
+    transform: scale(1.01);
   }
 `;
 
