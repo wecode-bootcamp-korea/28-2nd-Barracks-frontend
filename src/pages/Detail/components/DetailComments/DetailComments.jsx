@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { useLocation } from 'react-router';
-
-// import useFetch from 'pages/Detail/hooks/useFetch';
 import useComment from 'pages/Detail/hooks/useComment';
+import { api } from 'config';
 import Comments from './Comments';
 import CommentInputWrapper from './CommentInputWrapper';
 
@@ -13,10 +12,10 @@ export default function DetailComments() {
   const [offset, setOffset] = useState(0);
   const [newComment, setNewComment] = useState('');
   const { pathname } = useLocation();
-  const BASE_URL = `http://10.58.6.142:8000${pathname}/comments`;
+  const COMMENT_URL = `${api.comments}${pathname}/comments`;
 
   const { commentData, isLoading, mutate } = useComment(
-    `${BASE_URL}?offset=${offset}&limit=${COUNT_LIMIT}`
+    `${COMMENT_URL}?offset=${offset}&limit=${COUNT_LIMIT}`
   );
 
   if (isLoading) return <div>loading...</div>;
@@ -52,7 +51,7 @@ export default function DetailComments() {
       }),
     };
 
-    fetch(BASE_URL, {
+    fetch(COMMENT_URL, {
       method: 'POST',
       ...submitForm,
     })
@@ -62,7 +61,7 @@ export default function DetailComments() {
       });
 
     mutate(
-      `${BASE_URL}?offset=${offset}&limit=${COUNT_LIMIT}`,
+      `${COMMENT_URL}?offset=${offset}&limit=${COUNT_LIMIT}`,
       {
         ...commentData,
         content: newComment,
@@ -82,15 +81,13 @@ export default function DetailComments() {
         addNewComment={addNewComment}
         newComment={newComment}
       />
-      {
-        <Comments
-          comments={commentList}
-          isCommentLoading={isLoading}
-          offset={offset}
-          pages={pages}
-          goToNextPage={goToNextPage}
-        />
-      }
+      <Comments
+        comments={commentList}
+        isCommentLoading={isLoading}
+        offset={offset}
+        pages={pages}
+        goToNextPage={goToNextPage}
+      />
     </Container>
   );
 }

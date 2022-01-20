@@ -1,14 +1,12 @@
-import React, { useState, useEffect, useCallback, useRef } from 'react';
-import { useNavigate, useLocation, Link } from 'react-router-dom';
-import UserDropDownMenu from 'components/DropDown/UserDropDownMenu';
+import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import styled from 'styled-components';
-import useOutsideClick from 'hooks/useOutsideClick';
-import Main from '../Main';
 import {
   DropDownWrapper,
   MenuList,
   MenuItem,
 } from 'components/DropDown/UserDropDownMenu';
+import { api } from 'config';
 
 // 필터 버튼 수정 부분입니다.
 function FilterBar({
@@ -18,9 +16,7 @@ function FilterBar({
   handleResidence,
   mountPhotoCard,
 }) {
-  const ref = useRef();
   const location = useLocation();
-  const navigate = useNavigate();
   const [dropdownOpened, setIsDropDownOpened] = useState({
     size: false,
     residence: false,
@@ -36,11 +32,12 @@ function FilterBar({
   // 리팩토링 할 때 toggleDropDown 을 객체로 묵어도 좋을 것 같아요
 
   useEffect(() => {
-    fetch(`http://10.58.6.142:8000/postings${location.search}`, {})
+    fetch(`${api.postings}${location.search}`, {})
       .then(res => res.json())
       .then(data => {
         mountPhotoCard(data.results);
       });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location.search]);
 
   return (
