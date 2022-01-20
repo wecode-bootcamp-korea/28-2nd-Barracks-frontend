@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { useLocation, useParams } from 'react-router';
+import { useLocation } from 'react-router';
 
-import useFetch from 'pages/Detail/hooks/useFetch';
+// import useFetch from 'pages/Detail/hooks/useFetch';
+import useComment from 'pages/Detail/hooks/useComment';
 import Comments from './Comments';
 import CommentInputWrapper from './CommentInputWrapper';
 
@@ -12,15 +13,17 @@ export default function DetailComments() {
   const [offset, setOffset] = useState(0);
   const [newComment, setNewComment] = useState('');
   const { pathname } = useLocation();
+  const BASE_URL = `http://10.58.6.142:8000${pathname}/comments`;
 
-  const BASE_URL = `http://10.58.4.34:8000${pathname}`;
+  const { commentData, isLoading, mutate } = useComment(
+    `${BASE_URL}?offset=${offset}&limit=${COUNT_LIMIT}`
+  );
 
-  const { data: commentList, loading: isCommentLoading } = useFetch({
-    url: `${BASE_URL}?offset=${offset}&limit=${COUNT_LIMIT}`,
-    query: offset,
-  });
+  if (isLoading) return <div>loading...</div>;
 
-  const count = commentList && commentList.comments_totals;
+  const commentList = commentData.result.comments;
+
+  const count = commentData.result.comments_totals;
   const pages = Math.ceil(count / COUNT_LIMIT);
 
   const goToNextPage = event => {
@@ -40,44 +43,54 @@ export default function DetailComments() {
     setNewComment('');
 
     const submitForm = {
-      method: 'POST',
-      // headers: {
-      //   // 'Content-Type': 'application/json',
-      //   // Authorization: sessionStorage.getItem('access_token');
-      // },
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: sessionStorage.getItem('access_token'),
+      },
       body: JSON.stringify({
         content: newComment,
-        user_id: 1,
       }),
     };
 
-    fetch(BASE_URL, submitForm)
+    fetch(BASE_URL, {
+      method: 'POST',
+      ...submitForm,
+    })
       .then(res => res.json())
       .then(data => {
         // console.log(data);
       });
+
+    mutate(
+      `${BASE_URL}?offset=${offset}&limit=${COUNT_LIMIT}`,
+      {
+        ...commentData,
+        content: newComment,
+      },
+      true
+    );
   };
 
   return (
     <Container>
       <CommentCount>
         <span>댓글</span>
-        <Count>{commentList && commentList.comments_totals}</Count>
+        <Count>{count}</Count>
       </CommentCount>
       <CommentInputWrapper
         handleInputComment={handleInputComment}
         addNewComment={addNewComment}
         newComment={newComment}
       />
-      {commentList && (
+      {
         <Comments
-          comments={commentList.comments}
-          isCommentLoading={isCommentLoading}
+          comments={commentList}
+          isCommentLoading={isLoading}
           offset={offset}
           pages={pages}
           goToNextPage={goToNextPage}
         />
-      )}
+      }
     </Container>
   );
 }

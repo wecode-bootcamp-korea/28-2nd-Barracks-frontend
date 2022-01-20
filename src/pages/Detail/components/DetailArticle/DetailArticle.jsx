@@ -2,23 +2,21 @@ import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 import styled from 'styled-components';
 
-import useFetch from 'pages/Detail/hooks/useFetch';
+import useDetail from 'pages/Detail/hooks/useDetail';
 import DetailSlider from './DetailSlider';
 import DetailInformation from './DetailInformation';
 
 export default function DetailArticle() {
-  const BASE_URL = `http://10.58.4.34:8000/postings/${id}`;
   const { id } = useParams();
-  const { data: data, loading: isLoading } = useFetch({ url: BASE_URL });
-
-  const dataList = data && data;
+  const { detailData, isLoading } = useDetail(id);
+  const dataList = detailData && detailData.result;
 
   if (isLoading) return <div>Loading...</div>;
 
   return (
     <article>
-      <DetailSlider imageUrlList={dataList.image_urls} />
-      <ArticleComments>{dataList.content}</ArticleComments>
+      <DetailSlider imageUrlList={dataList?.image_urls} />
+      <ArticleComments>{dataList?.content}</ArticleComments>
       <ArticleTags>
         {dataList.tags?.map((tag, index) => (
           <Link key={index} to="/postings">

@@ -1,27 +1,25 @@
-[
-  {
-    "result": {
-      "content": "따스한 침실을 구경해보셔요!",
-      "hits": 2,
-      "image_urls": [
-        {
-          "image_id": 21,
-          "image_url": "https://cdn.pixabay.com/photo/2017/01/07/17/48/interior-1961070_1280.jpg"
-        },
-        {
-          "image_id": 22,
-          "image_url": "https://cdn.pixabay.com/photo/2015/04/20/06/46/office-730681_1280.jpg"
-        }
-      ],
-      "posting_id": 7,
-      "residence": "오피스텔",
-      "size": "30평대",
-      "space": "침실",
-      "style": "모던",
-      "tags": ["#침실", "#최고"],
-      "title": "따스한 온기가 느껴지는 침실",
-      "user_image": "oooo",
-      "user_name": "ppp"
-    }
+{
+  "result": {
+    "content": "따스한 침실을 구경해보셔요!",
+    "hits": 2,
+    "image_urls": [
+      {
+        "image_id": 21,
+        "image_url": "https://cdn.pixabay.com/photo/2017/01/07/17/48/interior-1961070_1280.jpg"
+      },
+      {
+        "image_id": 22,
+        "image_url": "https://cdn.pixabay.com/photo/2015/04/20/06/46/office-730681_1280.jpg"
+      }
+    ],
+    "posting_id": 7,
+    "residence": "오피스텔",
+    "size": "30평대",
+    "space": "침실",
+    "style": "모던",
+    "tags": ["#침실", "#최고"],
+    "title": "따스한 온기가 느껴지는 침실",
+    "user_image": "oooo",
+    "user_name": "ppp"
   }
-]
+}
