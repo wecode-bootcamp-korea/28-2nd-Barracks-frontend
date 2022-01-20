@@ -32,9 +32,8 @@ function NewPost() {
         Authorization: sessionStorage.getItem('access_token'),
       },
       body: formData,
-    })
-      .then(res => res.json())
-      .then(data => console.log(data));
+    }).then(res => res.json());
+    // .then(data => console.log(data));
   };
 
   // TAG Control

@@ -6,8 +6,7 @@ import Card from 'components/Card/Card';
 const API = `http://10.58.6.142:8000/postings`;
 const LIMIT = 8;
 
-function PhotoCard() {
-  const [photoCards, setPhotoCards] = useState([]);
+function PhotoCard({ photoCards, updatePhotoCard, mountPhotoCard }) {
   const [isLoading, setIsLoading] = useState(true);
   const [offset, setOffset] = useState(8);
 
@@ -26,7 +25,8 @@ function PhotoCard() {
     fetch(`${API}?offset=${offset}&limit=${LIMIT}`)
       .then(res => res.json())
       .then(data => {
-        setPhotoCards([...photoCards, ...data.results]);
+        updatePhotoCard(data.results);
+        // setPhotoCards([...photoCards, ...data.results]);
         setIsLoading(false);
       });
   };
@@ -36,7 +36,7 @@ function PhotoCard() {
     fetch(`${API}`)
       .then(res => res.json())
       .then(data => {
-        setPhotoCards(data.results);
+        mountPhotoCard(data.results);
         setIsLoading(false);
       });
   }, []);
