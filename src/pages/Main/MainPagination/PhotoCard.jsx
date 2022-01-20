@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import { api } from 'config';
 import Card from 'components/Card/Card';
 
-// const API = '/data/Mains/Mains.json'; mockdata
-const API = `http://10.58.6.142:8000/postings`;
+const API = api.postings;
 const LIMIT = 8;
 
 function PhotoCard({ photoCards, updatePhotoCard, mountPhotoCard }) {
-  const [isLoading, setIsLoading] = useState(true);
   const [offset, setOffset] = useState(8);
 
   const handleScroll = () => {
@@ -21,28 +20,24 @@ function PhotoCard({ photoCards, updatePhotoCard, mountPhotoCard }) {
   };
 
   const fetchPhotoCards = () => {
-    setIsLoading(true);
     fetch(`${API}?offset=${offset}&limit=${LIMIT}`)
       .then(res => res.json())
       .then(data => {
         updatePhotoCard(data.results);
-        // setPhotoCards([...photoCards, ...data.results]);
-        setIsLoading(false);
       });
   };
   useEffect(() => {
-    setIsLoading(true);
-
     fetch(`${API}`)
       .then(res => res.json())
       .then(data => {
         mountPhotoCard(data.results);
-        setIsLoading(false);
       });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
     offset > 8 && fetchPhotoCards();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [offset]);
 
   useEffect(() => {
@@ -61,7 +56,6 @@ function PhotoCard({ photoCards, updatePhotoCard, mountPhotoCard }) {
               const { id, ...photoInfo } = photo;
               return <Card key={id} {...photoInfo} />;
             })}
-            {/* {user_name} */}
           </Cards>
         </ArticleGrid>
       </Articles>
@@ -91,11 +85,6 @@ const ArticleGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   justify-content: center;
-
-  /* img {
-    width: 100%;
-    height: 100%;
-  } */
 
   img:hover {
     overflow: hidden;
