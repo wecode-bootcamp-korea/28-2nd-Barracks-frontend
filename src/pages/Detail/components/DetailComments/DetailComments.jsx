@@ -54,7 +54,7 @@ export default function DetailComments() {
     fetch(BASE_URL, submitForm)
       .then(res => res.json())
       .then(data => {
-        console.log(data);
+        // console.log(data);
       });
   };
 

@@ -11,46 +11,16 @@ import {
 } from 'components/DropDown/UserDropDownMenu';
 
 // 필터 버튼 수정 부분입니다.
-function FilterBar() {
-  const [filterBar, setFilterBar] = useState([]);
-  const [result, setResult] = useState('');
-  // const API = `http://10.58.6.142:8000/postings`;
+function FilterBar({
+  handleSpace,
+  handleSize,
+  handleStyle,
+  handleResidence,
+  mountPhotoCard,
+}) {
   const ref = useRef();
   const location = useLocation();
   const navigate = useNavigate();
-
-  useEffect(() => {
-    fetch(`http://10.58.6.142:8000/postings${location.search}`, {})
-      .then(res => res.json())
-      .then(data => setFilterBar(data.result));
-  }, [location.search]);
-
-  const handleSpace = space => {
-    // 인자로 받는 isSpace가 마지막 주소로 들어감
-    const qs = new URLSearchParams(location.search);
-    qs.set('space', space); //앞에 space는 백엔드에서 전달받는 인자명과 동일함.
-    navigate('?' + qs.toString());
-  };
-
-  // 이후 필터 필요한부분만 const 작성 예제 : const handleSize = 인자 => 이후 내용 유사함.
-  const handleSize = isSize => {
-    const qs = new URLSearchParams(location.search);
-    qs.set('size', isSize);
-    navigate('?' + qs.toString());
-  };
-
-  const handleStyle = isStyle => {
-    const qs = new URLSearchParams(location.search);
-    qs.set('style', isStyle);
-    navigate('?' + qs.toString());
-  };
-
-  const handleResidence = isResidence => {
-    const qs = new URLSearchParams(location.search);
-    qs.set('residence', isResidence);
-    navigate('?' + qs.toString());
-  };
-
   const [dropdownOpened, setIsDropDownOpened] = useState({
     size: false,
     residence: false,
@@ -62,8 +32,16 @@ function FilterBar() {
     const { name } = e.target;
     setIsDropDownOpened({ ...dropdownOpened, [name]: !dropdownOpened[name] });
   };
-  useOutsideClick(ref, () => setIsDropDownOpened());
+  // useOutsideClick(ref, () => setIsDropDownOpened());
   // 리팩토링 할 때 toggleDropDown 을 객체로 묵어도 좋을 것 같아요
+
+  useEffect(() => {
+    fetch(`http://10.58.6.142:8000/postings${location.search}`, {})
+      .then(res => res.json())
+      .then(data => {
+        mountPhotoCard(data.results);
+      });
+  }, [location.search]);
 
   return (
     <Container>
@@ -74,29 +52,17 @@ function FilterBar() {
         <FilterDropDown top="40px" left="60px">
           <DropDownList>
             <DropDownItem>
-              <button
-                onClick={() => {
-                  handleSize(handleSize.id);
-                }}
-              >
+              <button name="1" onClick={handleSize}>
                 10평대
               </button>
             </DropDownItem>
             <DropDownItem>
-              <button
-                onClick={() => {
-                  handleSize(handleSize.id);
-                }}
-              >
+              <button name="2" onClick={handleSize}>
                 20평대
               </button>
             </DropDownItem>
             <DropDownItem>
-              <button
-                onClick={() => {
-                  handleSize(handleSize.id);
-                }}
-              >
+              <button name="3" onClick={handleSize}>
                 30평대
               </button>
             </DropDownItem>
@@ -111,29 +77,17 @@ function FilterBar() {
         <FilterDropDown top="40px" left="170px">
           <DropDownList>
             <DropDownItem>
-              <button
-                onClick={() => {
-                  handleResidence(handleResidence.id);
-                }}
-              >
+              <button name="1" onClick={handleResidence}>
                 아파트
               </button>
             </DropDownItem>
             <DropDownItem>
-              <button
-                onClick={() => {
-                  handleResidence(handleResidence.id);
-                }}
-              >
+              <button name="2" onClick={handleResidence}>
                 오피스텔
               </button>
             </DropDownItem>
             <DropDownItem>
-              <button
-                onClick={() => {
-                  handleResidence(handleResidence.id);
-                }}
-              >
+              <button name="3" onClick={handleResidence}>
                 빌라
               </button>
             </DropDownItem>
@@ -148,29 +102,17 @@ function FilterBar() {
         <FilterDropDown top="40px" left="280px">
           <DropDownList>
             <DropDownItem>
-              <button
-                onClick={() => {
-                  handleStyle(handleStyle.id);
-                }}
-              >
+              <button name="1" onClick={handleStyle}>
                 모던
               </button>
             </DropDownItem>
             <DropDownItem>
-              <button
-                onClick={() => {
-                  handleStyle(handleStyle.id);
-                }}
-              >
+              <button name="2" onClick={handleStyle}>
                 내추럴
               </button>
             </DropDownItem>
             <DropDownItem>
-              <button
-                onClick={() => {
-                  handleStyle(handleStyle.id);
-                }}
-              >
+              <button name="3" onClick={handleStyle}>
                 빈티지
               </button>
             </DropDownItem>
@@ -185,29 +127,17 @@ function FilterBar() {
         <FilterDropDown top="40px" left="390px">
           <DropDownList>
             <DropDownItem>
-              <button
-                onClick={() => {
-                  handleSpace(handleSpace.id);
-                }}
-              >
+              <button name="1" onClick={handleSpace}>
                 침실
               </button>
             </DropDownItem>
             <DropDownItem>
-              <button
-                onClick={() => {
-                  handleSpace(handleSpace.id);
-                }}
-              >
+              <button name="2" onClick={handleSpace}>
                 욕실
               </button>
             </DropDownItem>
             <DropDownItem>
-              <button
-                onClick={() => {
-                  handleSpace(handleSpace.id);
-                }}
-              >
+              <button name="3" onClick={handleSpace}>
                 거실
               </button>
             </DropDownItem>
