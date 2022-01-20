@@ -47,103 +47,103 @@ function FilterBar({
     <Container>
       <MenuButton onClick={toggleDropDown} name="size">
         평수
+        {dropdownOpened.size && (
+          <FilterDropDown top="30px" left="0px">
+            <DropDownList>
+              <DropDownItem>
+                <button name="1" onClick={handleSize}>
+                  10평대
+                </button>
+              </DropDownItem>
+              <DropDownItem>
+                <button name="2" onClick={handleSize}>
+                  20평대
+                </button>
+              </DropDownItem>
+              <DropDownItem>
+                <button name="3" onClick={handleSize}>
+                  30평대
+                </button>
+              </DropDownItem>
+            </DropDownList>
+          </FilterDropDown>
+        )}
       </MenuButton>
-      {dropdownOpened.size && (
-        <FilterDropDown top="40px" left="60px">
-          <DropDownList>
-            <DropDownItem>
-              <button name="1" onClick={handleSize}>
-                10평대
-              </button>
-            </DropDownItem>
-            <DropDownItem>
-              <button name="2" onClick={handleSize}>
-                20평대
-              </button>
-            </DropDownItem>
-            <DropDownItem>
-              <button name="3" onClick={handleSize}>
-                30평대
-              </button>
-            </DropDownItem>
-          </DropDownList>
-        </FilterDropDown>
-      )}
 
       <MenuButton onClick={toggleDropDown} name="residence">
         주거형태
+        {dropdownOpened.residence && (
+          <FilterDropDown top="30px" left="0px">
+            <DropDownList>
+              <DropDownItem>
+                <button name="1" onClick={handleResidence}>
+                  아파트
+                </button>
+              </DropDownItem>
+              <DropDownItem>
+                <button name="2" onClick={handleResidence}>
+                  오피스텔
+                </button>
+              </DropDownItem>
+              <DropDownItem>
+                <button name="3" onClick={handleResidence}>
+                  빌라
+                </button>
+              </DropDownItem>
+            </DropDownList>
+          </FilterDropDown>
+        )}
       </MenuButton>
-      {dropdownOpened.residence && (
-        <FilterDropDown top="40px" left="170px">
-          <DropDownList>
-            <DropDownItem>
-              <button name="1" onClick={handleResidence}>
-                아파트
-              </button>
-            </DropDownItem>
-            <DropDownItem>
-              <button name="2" onClick={handleResidence}>
-                오피스텔
-              </button>
-            </DropDownItem>
-            <DropDownItem>
-              <button name="3" onClick={handleResidence}>
-                빌라
-              </button>
-            </DropDownItem>
-          </DropDownList>
-        </FilterDropDown>
-      )}
 
       <MenuButton onClick={toggleDropDown} name="style">
         스타일
+        {dropdownOpened.style && (
+          <FilterDropDown top="30px" left="0px">
+            <DropDownList>
+              <DropDownItem>
+                <button name="1" onClick={handleStyle}>
+                  모던
+                </button>
+              </DropDownItem>
+              <DropDownItem>
+                <button name="2" onClick={handleStyle}>
+                  내추럴
+                </button>
+              </DropDownItem>
+              <DropDownItem>
+                <button name="3" onClick={handleStyle}>
+                  빈티지
+                </button>
+              </DropDownItem>
+            </DropDownList>
+          </FilterDropDown>
+        )}
       </MenuButton>
-      {dropdownOpened.style && (
-        <FilterDropDown top="40px" left="280px">
-          <DropDownList>
-            <DropDownItem>
-              <button name="1" onClick={handleStyle}>
-                모던
-              </button>
-            </DropDownItem>
-            <DropDownItem>
-              <button name="2" onClick={handleStyle}>
-                내추럴
-              </button>
-            </DropDownItem>
-            <DropDownItem>
-              <button name="3" onClick={handleStyle}>
-                빈티지
-              </button>
-            </DropDownItem>
-          </DropDownList>
-        </FilterDropDown>
-      )}
 
       <MenuButton onClick={toggleDropDown} name="space">
         공간
+        {dropdownOpened.space && (
+          <FilterDropDown top="30px" left="0px">
+            <DropDownList>
+              <DropDownItem>
+                <button name="1" onClick={handleSpace}>
+                  침실
+                </button>
+              </DropDownItem>
+              <DropDownItem>
+                <button name="2" onClick={handleSpace}>
+                  욕실
+                </button>
+              </DropDownItem>
+              <DropDownItem>
+                <button name="3" onClick={handleSpace}>
+                  거실
+                </button>
+              </DropDownItem>
+            </DropDownList>
+          </FilterDropDown>
+        )}
       </MenuButton>
-      {dropdownOpened.space && (
-        <FilterDropDown top="40px" left="390px">
-          <DropDownList>
-            <DropDownItem>
-              <button name="1" onClick={handleSpace}>
-                침실
-              </button>
-            </DropDownItem>
-            <DropDownItem>
-              <button name="2" onClick={handleSpace}>
-                욕실
-              </button>
-            </DropDownItem>
-            <DropDownItem>
-              <button name="3" onClick={handleSpace}>
-                거실
-              </button>
-            </DropDownItem>
-          </DropDownList>
-        </FilterDropDown>
-      )}
     </Container>
   );
 }
@@ -170,6 +170,9 @@ const FilterDropDown = styled(DropDownWrapper)`
 
 const DropDownList = styled(MenuList)`
   width: 110px;
+  position: absolute;
+  top: 0;
+  left: 0;
 `;
 
 const DropDownItem = styled(MenuItem)`
@@ -185,6 +188,8 @@ const DropDownItem = styled(MenuItem)`
 export default FilterBar;
 
 export const MenuButton = styled.button`
+  position: relative;
+
   width: 120px;
   padding: 5px;
   background-color: ${({ theme }) => theme.white};

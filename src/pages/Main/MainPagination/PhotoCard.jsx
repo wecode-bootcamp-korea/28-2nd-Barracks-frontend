@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import Card from 'components/Card/Card';
 
-// const API = '/data/Mains/Mains.json';
+// const API = '/data/Mains/Mains.json'; mockdata
 const API = `http://10.58.6.142:8000/postings`;
 const LIMIT = 8;
 

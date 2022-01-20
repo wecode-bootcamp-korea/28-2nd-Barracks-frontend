@@ -22,12 +22,12 @@ function Card({
     <Container>
       <Article>
         <Head>
-          {/* <Title>{username}</Title> 기존 mock data */}
+          {/* <Title>{username}</Title> 기존 mock data입니다 */}
           <Title>{user_name}</Title>
           <div>
-            <img src={user_image} />
+            <img src={user_image} alt="프로필 이미지" />
           </div>
-          {/* <ProfileDesc>{top_detail}</ProfileDesc> mock data */}
+          {/* <ProfileDesc>{top_detail}</ProfileDesc> mock data입니다 */}
         </Head>
 
         {/* <Img alt="product_image" src={img[0]} onClick={() => goToDetail()} /> */}
