@@ -1,5 +1,4 @@
-import useFetch from 'pages/Detail/hooks/useFetch';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 import DetailAvatar from '../DetailAvatar/DetailAvatar';
@@ -9,7 +8,7 @@ const INPUT_TEXT = {
   button: '등록',
 };
 
-const loginUser = {
+const guestUser = {
   image_url: '/images/img-user-default.png',
 };
 
@@ -18,9 +17,13 @@ export default function CommentInputWrapper({
   addNewComment,
   newComment,
 }) {
+  const loginUser = JSON.parse(sessionStorage.getItem('userInfo'));
+
   return (
     <Container>
-      <DetailAvatar imageUrl={loginUser.image_url} />
+      <DetailAvatar
+        imageUrl={loginUser ? loginUser.profile_image : guestUser}
+      />
       <CommentInput onSubmit={addNewComment}>
         <input
           placeholder={INPUT_TEXT.placeholder}

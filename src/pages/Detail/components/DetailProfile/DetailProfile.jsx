@@ -3,17 +3,22 @@ import DetailAvatar from '../DetailAvatar/DetailAvatar';
 import DetailButton from '../DetailButtons/DetailButton';
 import styled from 'styled-components';
 
-const loginUser = {
+const guestUser = {
+  nickname: '치악산복숭아당도최고',
   image_url: '/images/img-user-default.png',
 };
 
 export default function DetailProfile() {
+  const loginUser = JSON.parse(sessionStorage.getItem('userInfo'));
+
   return (
     <Container>
-      <DetailAvatar imageUrl={loginUser.image_url} />
+      <DetailAvatar
+        imageUrl={loginUser ? loginUser.profile_image : guestUser.image_url}
+      />
       <Description>
-        <p>hackeny</p>
-        <span className="description">하드코딩중</span>
+        <p>{loginUser ? loginUser.nickname : guestUser.nickname}</p>
+        <span className="description">즐거운 우리집</span>
       </Description>
       <DetailButton color="blue" size="medium" padding="4px" fullWidth="72px">
         팔로우

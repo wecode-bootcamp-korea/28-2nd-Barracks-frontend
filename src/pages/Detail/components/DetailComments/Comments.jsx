@@ -14,7 +14,7 @@ export default function Comments({
 
   return (
     <Container>
-      {comments.map(comment => (
+      {comments?.map(comment => (
         <CommentWrapper
           key={comment.id}
           userImage={comment.user_image}

@@ -1,10 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-
 import DetailAside from './components/DetailAside/DetailAside';
 import DetailHeader from './components/DetailArticle/DetailHeader';
 import DetailArticle from './components/DetailArticle/DetailArticle';
-import DetailInformation from './components/DetailArticle/DetailInformation';
 import DetailComments from './components/DetailComments/DetailComments';
 
 function Detail() {
