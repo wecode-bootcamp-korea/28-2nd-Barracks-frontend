@@ -19,7 +19,7 @@ export default function DetailArticle() {
       <ArticleComments>{dataList?.content}</ArticleComments>
       <ArticleTags>
         {dataList.tags?.map((tag, index) => (
-          <Link key={index} to="/postings">
+          <Link key={index} to="/">
             <span>{tag}</span>
           </Link>
         ))}

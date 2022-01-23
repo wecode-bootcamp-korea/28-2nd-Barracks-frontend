@@ -35,5 +35,7 @@ const ArticleImage = styled.div`
 const StyledSlider = styled(Slider)`
   .slick-slide img {
     object-fit: cover;
+    width: 100%;
+    height: 100%;
   }
 `;

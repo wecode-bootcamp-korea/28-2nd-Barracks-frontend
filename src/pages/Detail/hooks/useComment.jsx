@@ -1,10 +1,10 @@
 import useSWR, { useSWRConfig } from 'swr';
 
-const fetcher = (...args) => fetch(...args).then(res => res.json());
+const fetcher = async (...args) => await fetch(...args).then(res => res.json());
 
 const useComment = url => {
   const { mutate } = useSWRConfig();
-  const { data: commentData } = useSWR(url, fetcher);
+  const { data: commentData } = useSWR(url, fetcher, { refreshInterval: 200 });
 
   return {
     commentData,
