@@ -64,10 +64,9 @@
 | Login & SignUp | **박윤국** | <ul><li>소셜 로그인 (카카오 이용)<li>JWT 토큰 받아서 localStroage 저장</ul>        |               ![](https://images.velog.io/images/yunkuk/post/499c534d-7e7b-4c3c-9fd1-dfd1c06f54dc/ezgif-2-e31be84fa5.gif)               |
 |  Main (List)   | **한상일** | <ul><li>점보트론 <li>카드 컴포넌트 <li>필터 기능 <li>무한스크롤 </ul>              |               ![](https://images.velog.io/images/yunkuk/post/13138a89-dcaa-4c16-9abe-f972605086c6/ezgif-2-76463ccffc.gif)               |
 |     Detail     | **정해수** | <ul><li>메인 슬라이더 <li>오른쪽 사이드 유저정보 및 좋아요 <li>댓글 </ul>          |               ![](https://images.velog.io/images/yunkuk/post/c121c833-689c-45f6-8c87-b8f90dc5b2bc/ezgif-2-95c459c976.gif)               |
-|    NewPost     | **박윤국** | <ul><li>유저 사진 업로드<li>Drag & Drop 구현<li>유저가 올린 내용 Submit 구현 </ul> | ![](https://images.velog.io/images/yunkuk/post/624a231e-b8f2-4bbc-a135-314b7d46e439/150052017-e5216992-635f-4842-9263-0c458744dae7.gif) |
+|    NewPost     | **박윤국** | <ul><li>유저 사진 업로드<li>Drag & Drop 구현<li>유저가 올린 내용 Submit 구현 </ul> | ![150052017-e5216992-635f-4842-9263-0c458744dae7](https://user-images.githubusercontent.com/53929065/150671791-dd5d71bc-60e4-40bf-9883-d55686077d04.gif) |
 
 ### 구현 기능
-
 ![](https://images.velog.io/images/yunkuk/post/a91afb50-bfc9-46ea-9039-4ba5020b77d2/image.png)
 
 ## Reference
