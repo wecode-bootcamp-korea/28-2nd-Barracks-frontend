@@ -31,15 +31,16 @@
 
 ### Languages and Tools
 
-<div aligin=center>
-  
-  [![](https://img.shields.io/badge/ES6-F7DF1E?logo=javascript&logoColor=white&logoWidth=20)]()
-  [![](https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=white&logoWidth=20)]()
-  [![](https://img.shields.io/badge/Hooks-61DAFB?logo=react&logoColor=white&logoWidth=20)]()
-  [![](https://img.shields.io/badge/Styled_component-DB7093?logo=styled-components&logoColor=white&logoWidth=20)]()
+<div align=center>
+
+[![](https://img.shields.io/badge/ES6-F7DF1E?logo=javascript&logoColor=white&logoWidth=20)]()
+[![](https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=white&logoWidth=20)]()
+[![](https://img.shields.io/badge/Hooks-61DAFB?logo=react&logoColor=white&logoWidth=20)]()
+[![](https://img.shields.io/badge/Styled_component-DB7093?logo=styled-components&logoColor=white&logoWidth=20)]()
+
 </div>
 
-<div aligin=center>
+<div align=center>
 
 [![](https://img.shields.io/badge/Git-F05032?logo=git&logoColor=white&logoWidth=20)]()
 [![](https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white&logoWidth=20)]()
@@ -50,23 +51,34 @@
 
 ## :: 데모 동영상
 
+아래의 이미지를 클릭하시면 해당 데모 영상으로 이동합니다.
+
+<div align="center">
+
 [![Watch the video](https://img.youtube.com/vi/VWbA-JcUxvY/hqdefault.jpg)](https://youtu.be/VWbA-JcUxvY)
+
+</div>
 
 ## :: 팀원
 
 - Frontend - 박윤국, 정해수, 한상일
 - Backend - 이아영, 정병연, 지원석
 
+<br />
+
 ## :: Front Page 담당 및 구현 기능
 
-|      Page      |    담당    | 구현 할 사항                                                                       |                                                               구현이미지                                                                |
-| :------------: | :--------: | :--------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------: |
-| Login & SignUp | **박윤국** | <ul><li>소셜 로그인 (카카오 이용)<li>JWT 토큰 받아서 localStroage 저장</ul>        |               ![](https://images.velog.io/images/yunkuk/post/499c534d-7e7b-4c3c-9fd1-dfd1c06f54dc/ezgif-2-e31be84fa5.gif)               |
-|  Main (List)   | **한상일** | <ul><li>점보트론 <li>카드 컴포넌트 <li>필터 기능 <li>무한스크롤 </ul>              |               ![](https://images.velog.io/images/yunkuk/post/13138a89-dcaa-4c16-9abe-f972605086c6/ezgif-2-76463ccffc.gif)               |
-|     Detail     | **정해수** | <ul><li>메인 슬라이더 <li>오른쪽 사이드 유저정보 및 좋아요 <li>댓글 페이지네이션</ul>          |               ![](https://images.velog.io/images/yunkuk/post/c121c833-689c-45f6-8c87-b8f90dc5b2bc/ezgif-2-95c459c976.gif)               |
-|    NewPost     | **박윤국** | <ul><li>유저 사진 업로드<li>Drag & Drop 구현<li>유저가 올린 내용 Submit 구현 </ul> | ![150052017-e5216992-635f-4842-9263-0c458744dae7](https://user-images.githubusercontent.com/53929065/150671791-dd5d71bc-60e4-40bf-9883-d55686077d04.gif) |
+|      Page      |    담당    | 구현 할 사항                                                                          |                                                                        구현이미지                                                                        |
+| :------------: | :--------: | :------------------------------------------------------------------------------------ | :------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| Login & SignUp | **박윤국** | <ul><li>소셜 로그인 (카카오 이용)<li>JWT 토큰 받아서 localStorage 저장</ul>           |                       ![](https://images.velog.io/images/yunkuk/post/499c534d-7e7b-4c3c-9fd1-dfd1c06f54dc/ezgif-2-e31be84fa5.gif)                        |
+|  Main (List)   | **한상일** | <ul><li>점보트론 <li>카드 컴포넌트 <li>필터 기능 <li>무한스크롤 </ul>                 |                       ![](https://images.velog.io/images/yunkuk/post/13138a89-dcaa-4c16-9abe-f972605086c6/ezgif-2-76463ccffc.gif)                        |
+|     Detail     | **정해수** | <ul><li>메인 슬라이더 <li>오른쪽 사이드 유저정보 및 좋아요 <li>댓글 페이지네이션</ul> |                       ![](https://images.velog.io/images/yunkuk/post/c121c833-689c-45f6-8c87-b8f90dc5b2bc/ezgif-2-95c459c976.gif)                        |
+|    NewPost     | **박윤국** | <ul><li>유저 사진 업로드<li>Drag & Drop 구현<li>유저가 올린 내용 Submit 구현 </ul>    | ![150052017-e5216992-635f-4842-9263-0c458744dae7](https://user-images.githubusercontent.com/53929065/150671791-dd5d71bc-60e4-40bf-9883-d55686077d04.gif) |
 
 ### 구현 기능
+
+기능명세서
+
 ![](https://images.velog.io/images/yunkuk/post/a91afb50-bfc9-46ea-9039-4ba5020b77d2/image.png)
 
 ## Reference
